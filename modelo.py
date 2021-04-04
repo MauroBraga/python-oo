@@ -23,6 +23,9 @@ class Filme(Programa):
         super().__init__(nome, ano);
         self.duracao=duracao
 
+    def retorna_cadastro_diferenciado(self):
+        pass
+
 
 class Serie(Programa):
     def __init__(self,nome,ano,temporadas):
@@ -31,13 +34,10 @@ class Serie(Programa):
 
 
 
-vingadores = Filme("vingadores - guerra infinita",2018,160);
-vingadores.dar_like();
-print(vingadores.nome);
-print(f'Nome: {vingadores.nome} - Ano: {vingadores.ano} - Duração: {vingadores.duracao} - Likes:{vingadores.likes}')
-
-atlanta = Serie("Atlanta",2018,2);
-atlanta.dar_like();
-atlanta.dar_like();
-
-print(f'Nome: {atlanta.nome} - Ano: {atlanta.ano} - Temporadas: {atlanta.temporadas} - Likes:{atlanta.likes}')
+vingadores = Filme('vingadores - guerra infinita', 2018, 160)
+vingadores.dar_like()
+print(f'{vingadores.nome} - {vingadores.duracao}: {vingadores.likes}')
+atlanta = Serie('atlanta', 2018, 2)
+atlanta.dar_like()
+atlanta.dar_like()
+print(f'{atlanta.nome} - {atlanta.temporadas}: {atlanta.likes}')
