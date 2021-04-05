@@ -40,11 +40,18 @@ class Serie(Programa):
     def __str__(self):
         return f'{self._nome} - {self.ano} - {self.temporadas} Temporadas - {self._likes} Likes';
 
-class Playlist(list):
+class Playlist:
     def __init__(self, nome, programas):
         self.nome = nome;
-        super().__init__(programas);
+        self._programas = programas;
 
+    @property
+    def listagem(self):
+        return self._programas;
+
+    @property
+    def tamanho(self):
+        return len(self._programas)
 
 
 
@@ -66,9 +73,9 @@ filmes_e_series = [vingadores, atlanta, demolidor, tmep];
 
 fim_de_semana = Playlist('Fim de semana', filmes_e_series);
 
-print(f'Tamanho do playlist: {len(fim_de_semana)}')
+print(f'Tamanho do playlist: {len(fim_de_semana.listagem)}')
 
-for programa in fim_de_semana:
+for programa in fim_de_semana.listagem:
    print(programa)
 
-print(f'Tá ou não tá? {demolidor in fim_de_semana}');
+print(f'Tá ou não tá? {demolidor in fim_de_semana.listagem}');
