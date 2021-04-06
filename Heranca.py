@@ -35,7 +35,7 @@ class Junior(Alura):
 class Pleno(Alura, Caelum):
     pass
 
-class Senior(Alura, Caelum):
+class Senior(Alura, Caelum, Hipster):
     pass
 
 luan = Senior('Luan')
